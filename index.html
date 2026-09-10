@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Anniversary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Music Toggle Button -->
+  <button id="music-toggle" class="music-toggle" aria-label="Toggle background music" aria-pressed="false">
+    <svg viewBox="0 0 24 24" class="music-icon">
+      <path d="M9 18V5l12-2v13" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6" fill="none"/>
+      <circle cx="18" cy="16" r="3" stroke="currentColor" stroke-width="1.6" fill="none"/>
+    </svg>
+  </button>
+  
+  <audio id="bg-music" src="music.mp3" loop></audio>
+
+  <!-- Background animation layer -->
+  <div id="falling-layer" aria-hidden="true"></div>
+
+  <!-- Main Container -->
+  <main class="container">
+    
+    <!-- Scene 1: Envelope / Opening Page -->
+    <section id="scene-landing" class="scene active">
+      <div class="envelope-wrapper">
+        <div class="envelope" id="envelope">
+          <div class="flap"></div>
+          <div class="pocket"></div>
+          <div class="letter-preview">
+            <p id="landing-trigger" class="cursive-text" style="cursor: pointer;">It's our anniversary</p>
+          </div>
+        </div>
+        <p class="instruction">tap the words</p>
+      </div>
+    </section>
+
+    <!-- Scene 2: Letter Page -->
+    <section id="scene-letter" class="scene">
+      <div class="letter-wrapper">
+        
+        <!-- Left Side Photos -->
+        <div class="side-photos left-photos">
+          <img src="https://i.ibb.co/RG6fBhSb/IMG-20260629-WA0043.jpg" alt="Memory Left 1" class="side-img">
+          <img src="https://i.ibb.co/zVTC1GdM/IMG-20260416-230439.jpg" alt="Memory Left 2" class="side-img">
+        </div>
+
+        <!-- Letter Card -->
+        <article class="letter-card">
+          <h2 class="letter-title cursive-text">One year with you</h2>
+          
+          <p class="time-counter" id="time-counter" aria-live="off"></p>
+          
+          <p class="letter-text">
+            My love, a year ago today, I didn't just gain a girlfriend, I've gained my favourite
+            person, my best friend, my soulmate, and the softest place I know to land. Every ordinary day
+            with you somehow turns into one I want to remember forever. From the moment I've laid eyes on you, I knew you were the one for me. 
+            To all the laughter, the quiet moments, our late night talks, late night gaming.
+            Thank you for your patience, your laugh that I could listen to on repeat, and the way you make even
+            the smallest moments feel like something worth celebrating.
+            I love you with my entire heart.
+          </p>
+          <p class="letter-text">
+            I can't wait for everything still ahead of us. Here's to one year down,
+            and to all the ones still coming.
+          </p>
+          <p class="signature cursive-text">— always yours</p>
+
+          <!-- Blooming Flower Button -->
+          <div class="flower-btn-wrapper">
+            <button id="flower-button" class="flower-btn" aria-label="Open photo album">
+              <svg class="flower-icon" viewBox="0 0 64 64">
+                <g fill="currentColor">
+                  <ellipse cx="32" cy="18" rx="9" ry="14"/>
+                  <ellipse cx="32" cy="18" rx="9" ry="14" transform="rotate(72 32 32)"/>
+                  <ellipse cx="32" cy="18" rx="9" ry="14" transform="rotate(144 32 32)"/>
+                  <ellipse cx="32" cy="18" rx="9" ry="14" transform="rotate(216 32 32)"/>
+                  <ellipse cx="32" cy="18" rx="9" ry="14" transform="rotate(288 32 32)"/>
+                </g>
+                <circle cx="32" cy="32" r="7" fill="#FFF6F3"/>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Right Side Photos -->
+        <div class="side-photos right-photos">
+          <img src="https://i.ibb.co/ZztWMHS9/IMG-20260118-180150.jpg" alt="Memory Right 1" class="side-img">
+          <img src="https://i.ibb.co/XfmZH7h1/IMG-20251214-WA0045.jpg" alt="Memory Right 2" class="side-img">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Scene 3: Photo Album -->
+    <section id="scene-album" class="scene">
+      <section class="album-section">
+        
+        <!-- Back to Letter Button -->
+        <button id="back-to-letter" class="back-btn" aria-label="Back to letter">&#8592; Read Letter</button>
+
+        <h3 class="album-title cursive-text">Our little album</h3>
+        
+        <div class="category-tabs">
+          <button class="tab-btn active" data-category="us">Us</button>
+          <button class="tab-btn" data-category="dates">First Dates</button>
+          <button class="tab-btn" data-category="silly">Silly Moments</button>
+        </div>
+
+        <div class="book-wrapper">
+          <div class="book" id="book"></div>
+        </div>
+
+        <div class="album-controls">
+          <button id="prev-btn" class="nav-btn" aria-label="Previous page">&#10094;</button>
+          <span id="page-indicator" class="page-indicator"></span>
+          <button id="next-btn" class="nav-btn" aria-label="Next page">&#10095;</button>
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
